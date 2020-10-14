@@ -32,7 +32,7 @@ public class SinkKnob : MonoBehaviour
                     Debug.Log(hand.transform.eulerAngles.y - previousY);
                     if (gameObject.tag == ("RightKnob"))
                     {
-                        if (transform.eulerAngles.y < 0)
+                        if (transform.eulerAngles.y > 270)
                         transform.eulerAngles = new Vector3(0, 0, 0);
                         if (transform.eulerAngles.y > 90)
                         transform.eulerAngles = new Vector3(0, 90, 0);
