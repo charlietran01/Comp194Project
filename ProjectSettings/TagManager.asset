@@ -9,6 +9,10 @@ TagManager:
   - RightHand
   - LeftKnob
   - RightKnob
+  - Start
+  - Stage1
+  - Stage2
+  - Stage3
   layers:
   - Default
   - TransparentFX
