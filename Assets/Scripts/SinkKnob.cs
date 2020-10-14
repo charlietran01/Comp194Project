@@ -22,19 +22,35 @@ public class SinkKnob : MonoBehaviour
     {
         if (handColliding)
         {
+            knobEulers = transform.eulerAngles;
             if (hand.tag == ("LeftHand") && Input.GetAxis("Oculus_CrossPlatform_PrimaryHandTrigger") >= 0.30 || hand.tag == ("RightHand") && Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") >= 0.30)
             {
                 if (handTouching)
                 {
                     Debug.Log("handTouching if statement");
-                    knobEulers += new Vector3(0, knobEulers.y - previousY, 0);
+                    transform.eulerAngles += new Vector3(0, hand.transform.eulerAngles.y - previousY, 0);
+                    Debug.Log(hand.transform.eulerAngles.y - previousY);
+                    if (gameObject.tag == ("RightKnob"))
+                    {
+                        if (transform.eulerAngles.y < 0)
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        if (transform.eulerAngles.y > 90)
+                        transform.eulerAngles = new Vector3(0, 90, 0);
+                    }
+                    if (gameObject.tag == ("LeftKnob"))
+                    {
+                        if (transform.eulerAngles.y > 180)
+                        transform.eulerAngles = new Vector3(0, 180, 0);
+                        if (transform.eulerAngles.y < 90)
+                        transform.eulerAngles = new Vector3(0, 90, 0);
+                    }
                 }
                 else
                 {
                     handTouching = true;
                 }
-                previousY = knobEulers.y;
             }
+            previousY = hand.transform.eulerAngles.y;
         }
     }
 
