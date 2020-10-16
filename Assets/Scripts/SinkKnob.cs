@@ -27,9 +27,7 @@ public class SinkKnob : MonoBehaviour
             {
                 if (handTouching)
                 {
-                    Debug.Log("handTouching if statement");
                     transform.eulerAngles += new Vector3(0, hand.transform.eulerAngles.y - previousY, 0);
-                    Debug.Log(hand.transform.eulerAngles.y - previousY);
                     if (gameObject.tag == ("RightKnob"))
                     {
                         if (transform.eulerAngles.y > 270)
@@ -60,7 +58,6 @@ public class SinkKnob : MonoBehaviour
         {
             hand = other.gameObject;
             handColliding = true;
-            Debug.Log("OnTriggerEnter");
         }
     }
 
@@ -69,6 +66,5 @@ public class SinkKnob : MonoBehaviour
         handTouching = false;
         handColliding = false;
         hand = null;
-        Debug.Log("OnTriggerExit");
     }
 }

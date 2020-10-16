@@ -22,13 +22,9 @@ public class Sink : MonoBehaviour
     {
         if (rightKnob.transform.localEulerAngles.y >= 35 || leftKnob.transform.localEulerAngles.y <= 145)
         {
-            Debug.Log("Right knob rotation: " + rightKnob.transform.localEulerAngles.y);
-            Debug.Log("Left knob rotation: " + leftKnob.transform.localEulerAngles.y);
             water.SetActive(true);
-            Debug.Log("Water on!");
             transformFactor = System.Math.Max(rightKnob.transform.eulerAngles.y, (leftKnob.transform.eulerAngles.y * -1) + 180)/35;
             water.transform.localScale = Vector3.Scale(originalWater, new Vector3(transformFactor, 1, transformFactor));
-            Debug.Log("Water transform factor: " + transformFactor);
         }
         else
         {
