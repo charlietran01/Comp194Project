@@ -36,13 +36,14 @@ public class HandState : MonoBehaviour
                     handFlip = -1;
                 }
                 Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.05844998f * handFlip, -0.02250004f, -0.0662000f);
-                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.02189994f * handFlip, -0.04050004f, -0.03750002f);
-                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.0187f * handFlip, -0.05710006f, -0.05540001f);
-                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.02469993f * handFlip, -0.05710006f, -0.02610004f);
-                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.02389991f * handFlip, -0.02400005f, -0.02090001f);
-                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.058f * handFlip, -0.02272f, -0.0281f);
+                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.02400005f * handFlip, -0.04050004f, -0.03750002f);
+                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.02139997f * handFlip, -0.05710006f, -0.06659997f);
+                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.02929997f * handFlip, -0.05710006f, -0.02610004f);
+                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.0288f * handFlip, -0.02400005f, -0.02090001f);
+                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.06040001f * handFlip, -0.02272f, -0.0281f);
                 Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.0453999f * handFlip, -0.0005999804f, -0.074f);
-                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.0453999f * handFlip, -0.003300071f, -0.04250002f);
+                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.05869997f * handFlip, -0.04980004f, -0.05869997f);
+                Instantiate(dirtPrefab, transform.position, transform.rotation, transform).transform.localPosition += new Vector3(0.01520002f * handFlip, -0.03600001f, -0.0704f);
                 dirtList = new List<GameObject>();
                 for (int i = 0; i < transform.childCount; i++)
                 {
@@ -76,6 +77,7 @@ public class HandState : MonoBehaviour
                     {
                         dirt.AddComponent<Rigidbody>();
                         dirt.transform.SetParent(null);
+                        dirt.GetComponent<SphereCollider>().enabled = true;
                     }
                     // transform.Find("DirtSphere(Clone)").gameObject.AddComponent<Rigidbody>();
                     // transform.Find("DirtSphere(Clone)").SetParent(null);
