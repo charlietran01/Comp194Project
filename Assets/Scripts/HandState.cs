@@ -5,12 +5,16 @@ using UnityEngine;
 public class HandState : MonoBehaviour
 {
     public GameObject dirtPrefab;
+    public GameObject bubbleGen;
+    GameObject bubbles;
     List<GameObject> dirtList;
     bool isDirty;
     bool dirtOnHand;
     bool inWater;
+    bool touchCleaner;
     bool cleaning;
     float waterTime;
+    float soapTime;
     float destroyTimer;
     int handFlip;
     
@@ -21,6 +25,7 @@ public class HandState : MonoBehaviour
         dirtOnHand = false;
         handFlip = 1;
         inWater = false;
+        touchCleaner = false;
         cleaning = false;
     }
 
@@ -54,9 +59,13 @@ public class HandState : MonoBehaviour
                 }
                 foreach (GameObject dirt in dirtList)
                 {
-                    Debug.Log(dirt);
+                    // Debug.Log(dirt);
                 }
                 dirtOnHand = true;
+            }
+            if (soapTime >= 2 && bubbles == null)
+            {
+                bubbles = Instantiate(bubbleGen, transform.position, transform.rotation, transform);
             }
             if (inWater && waterTime >= 5)
             {
@@ -79,10 +88,9 @@ public class HandState : MonoBehaviour
                         dirt.transform.SetParent(null);
                         dirt.GetComponent<SphereCollider>().enabled = true;
                     }
-                    // transform.Find("DirtSphere(Clone)").gameObject.AddComponent<Rigidbody>();
-                    // transform.Find("DirtSphere(Clone)").SetParent(null);
+                    GameObject.Destroy(bubbles);
                     cleaning = false;
-                    Debug.Log("rigidbodies added");
+                    // Debug.Log("rigidbodies added");
                 }
                 destroyTimer += Time.deltaTime;
                 if (destroyTimer >= 5)
@@ -92,11 +100,22 @@ public class HandState : MonoBehaviour
                         Object.Destroy(dirt);
                     }
                     // Object.Destroy(transform.Find("DirtSphere(Clone)").gameObject);
-                    Debug.Log("Dirt destroyed");
+                    // Debug.Log("Dirt destroyed");
                     destroyTimer = 0;
                     dirtOnHand = false;
                 }
             }
+        }
+        if (gameObject.GetComponent<OVRGrabber>().m_grabbedObj.gameObject != null)
+        {
+            if (gameObject.GetComponent<OVRGrabber>().m_grabbedObj.gameObject.tag == "Cleaner")
+            {
+                touchCleaner = true;
+            }
+        }
+        else
+        {
+            touchCleaner = false;
         }
     }
 
@@ -105,7 +124,11 @@ public class HandState : MonoBehaviour
         if (inWater)
         {
             waterTime += Time.deltaTime;
-            Debug.Log(waterTime);
+            // Debug.Log(waterTime);
+        }
+        if (touchCleaner && inWater)
+        {
+            soapTime += Time.deltaTime;
         }
     }
 
