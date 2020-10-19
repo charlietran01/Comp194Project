@@ -15,18 +15,12 @@ EditorBuildSettings:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 =======
 >>>>>>> parent of b4b4c99... Update EditorBuildSettings.asset
 =======
 >>>>>>> parent of b4b4c99... Update EditorBuildSettings.asset
 =======
->>>>>>> parent of 9fb8d86... Update EditorBuildSettings.asset
-=======
 >>>>>>> parent of b4b4c99... Update EditorBuildSettings.asset
-=======
->>>>>>> parent of d340e86... Update EditorBuildSettings.asset
   - enabled: 1
 <<<<<<< Updated upstream
     path: Assets/Scenes/Stage2.unity
@@ -38,30 +32,20 @@ EditorBuildSettings:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 9fb8d86... Update EditorBuildSettings.asset
 =======
 >>>>>>> parent of 5787275... Bug with seeing the knife/board on the counter
 =======
 >>>>>>> parent of 5787275... Bug with seeing the knife/board on the counter
 =======
 >>>>>>> parent of 5787275... Bug with seeing the knife/board on the counter
-<<<<<<< HEAD
 =======
 >>>>>>> parent of 5787275... Bug with seeing the knife/board on the counter
-=======
->>>>>>> parent of b4b4c99... Update EditorBuildSettings.asset
-<<<<<<< HEAD
 =======
 >>>>>>> parent of b4b4c99... Update EditorBuildSettings.asset
 =======
 >>>>>>> parent of b4b4c99... Update EditorBuildSettings.asset
 =======
->>>>>>> parent of 9fb8d86... Update EditorBuildSettings.asset
-=======
->>>>>>> parent of d340e86... Update EditorBuildSettings.asset
+>>>>>>> parent of b4b4c99... Update EditorBuildSettings.asset
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a3db2a545c2914d37965c04d779dd03b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 38fbf7637d3b74e43bb0cc714d4ca87b, type: 2}
-git merge --abort
