@@ -61,3 +61,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/Resources/OVRBuildConfig.asset
+Assets/Scenes/DebugKitchen.unity
+Assets/Scenes/Stage2.unity
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/ProjectSettings.asset
