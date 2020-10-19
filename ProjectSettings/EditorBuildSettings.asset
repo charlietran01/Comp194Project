@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DebugKitchen.unity
     guid: bf801b8985ae1454b91ab1046d95eea4
 <<<<<<< HEAD
+<<<<<<< HEAD
   - enabled: 1
 <<<<<<< Updated upstream
     path: Assets/Scenes/Stage2.unity
@@ -17,6 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage1.unity
     guid: e53b035daffd19f4482a9fc81d93f2e1
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 5787275... Bug with seeing the knife/board on the counter
 =======
 >>>>>>> parent of 5787275... Bug with seeing the knife/board on the counter
   m_configObjects:
